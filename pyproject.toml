@@ -1,0 +1,11 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+# chromadb still calls asyncio.iscoroutinefunction (deprecated since Python 3.14) – not our code
+filterwarnings = ["ignore::DeprecationWarning:chromadb.*"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

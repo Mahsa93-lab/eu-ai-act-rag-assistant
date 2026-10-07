@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7D8EA3"/></marker>
+  </defs>
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <text x="30" y="40" font-size="22" font-weight="700" fill="#1D2430">EU AI Act &amp; GDPR assistant · retrieval-augmented generation with citations and guardrails</text>
+  <text x="30" y="66" font-size="14" fill="#5B6574">Official legal texts (DE/EN) → article-level index → hybrid search → LLM with strict prompt → checked answer with sources</text>
+
+  <!-- offline row -->
+  <text x="30" y="104" font-size="13" font-weight="700" fill="#7D8EA3" letter-spacing="1">BUILD THE INDEX (ONCE, LOCAL)</text>
+  <g>
+    <rect x="30" y="116" width="200" height="110" rx="10" fill="none" stroke="#7D8EA3" stroke-width="1.5"/>
+    <text x="130" y="144" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">EUR-Lex HTML</text>
+    <text x="130" y="166" text-anchor="middle" font-size="12.5" fill="#5B6574">AI Act 2024/1689</text>
+    <text x="130" y="185" text-anchor="middle" font-size="12.5" fill="#5B6574">GDPR 2016/679</text>
+    <text x="130" y="204" text-anchor="middle" font-size="12.5" fill="#5B6574">German + English</text>
+
+    <rect x="280" y="116" width="200" height="110" rx="10" fill="#E5ECF5" stroke="#3E6FA8" stroke-width="1.5"/>
+    <text x="380" y="144" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">parse_articles</text>
+    <text x="380" y="166" text-anchor="middle" font-size="12.5" fill="#1D2430">450 articles + annexes</text>
+    <text x="380" y="185" text-anchor="middle" font-size="12.5" fill="#1D2430">count check per file</text>
+    <text x="380" y="204" text-anchor="middle" font-size="12.5" fill="#1D2430">(113 + 13 · 99)</text>
+
+    <rect x="530" y="116" width="200" height="110" rx="10" fill="#E5ECF5" stroke="#3E6FA8" stroke-width="1.5"/>
+    <text x="630" y="144" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">chunking</text>
+    <text x="630" y="166" text-anchor="middle" font-size="12.5" fill="#1D2430">whole paragraphs ≤ 1,400 chars</text>
+    <text x="630" y="185" text-anchor="middle" font-size="12.5" fill="#1D2430">header: law · article · title</text>
+    <text x="630" y="204" text-anchor="middle" font-size="12.5" fill="#1D2430">cited unit = article</text>
+
+    <rect x="780" y="116" width="200" height="110" rx="10" fill="#E5ECF5" stroke="#3E6FA8" stroke-width="1.5"/>
+    <text x="880" y="144" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">embeddings</text>
+    <text x="880" y="166" text-anchor="middle" font-size="12.5" fill="#1D2430">multilingual-e5-large</text>
+    <text x="880" y="185" text-anchor="middle" font-size="12.5" fill="#1D2430">fastembed (ONNX, CPU)</text>
+    <text x="880" y="204" text-anchor="middle" font-size="12.5" fill="#1D2430">no data leaves the PC</text>
+
+    <rect x="1030" y="116" width="140" height="110" rx="10" fill="#DCEFE4" stroke="#2E8B57" stroke-width="1.5"/>
+    <text x="1100" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">ChromaDB</text>
+    <text x="1100" y="172" text-anchor="middle" font-size="12.5" fill="#1D2430">vector index</text>
+    <text x="1100" y="198" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">BM25</text>
+    <text x="1100" y="217" text-anchor="middle" font-size="12.5" fill="#1D2430">per language</text>
+
+    <path d="M230 171H276" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M480 171H526" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M730 171H776" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M980 171H1026" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+  </g>
+
+  <!-- online row -->
+  <text x="30" y="280" font-size="13" font-weight="700" fill="#7D8EA3" letter-spacing="1">ANSWER A QUESTION</text>
+  <g>
+    <rect x="30" y="292" width="170" height="130" rx="10" fill="none" stroke="#7D8EA3" stroke-width="1.5"/>
+    <text x="115" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">Question</text>
+    <text x="115" y="344" text-anchor="middle" font-size="12.5" fill="#5B6574">German or English</text>
+    <text x="115" y="372" text-anchor="middle" font-size="12.5" fill="#B4441E">PII masking</text>
+    <text x="115" y="391" text-anchor="middle" font-size="12.5" fill="#5B6574">e-mail · phone · IBAN</text>
+
+    <rect x="240" y="292" width="250" height="130" rx="10" fill="#DCEFE4" stroke="#2E8B57" stroke-width="1.5"/>
+    <text x="365" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">Hybrid search</text>
+    <text x="365" y="344" text-anchor="middle" font-size="12.5" fill="#1D2430">vector top 20 + BM25 top 20</text>
+    <text x="365" y="363" text-anchor="middle" font-size="12.5" fill="#1D2430">Reciprocal Rank Fusion (k = 60)</text>
+    <text x="365" y="382" text-anchor="middle" font-size="12.5" fill="#1D2430">chunks → top 5 articles</text>
+    <text x="365" y="401" text-anchor="middle" font-size="12.5" fill="#1D2430">filtered to question language</text>
+
+    <rect x="530" y="292" width="230" height="130" rx="10" fill="#F3E3D7" stroke="#C0632B" stroke-width="1.5"/>
+    <text x="645" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">LLM</text>
+    <text x="645" y="344" text-anchor="middle" font-size="12.5" fill="#1D2430">OpenAI-compatible API</text>
+    <text x="645" y="363" text-anchor="middle" font-size="12.5" fill="#1D2430">OpenAI · Gemini · Ollama</text>
+    <text x="645" y="382" text-anchor="middle" font-size="12.5" fill="#1D2430">strict prompt: context only,</text>
+    <text x="645" y="401" text-anchor="middle" font-size="12.5" fill="#1D2430">[AI Act Art. 5] after each claim</text>
+
+    <rect x="800" y="292" width="200" height="130" rx="10" fill="#FBE3DD" stroke="#B4441E" stroke-width="1.5"/>
+    <text x="900" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">Guardrails (code)</text>
+    <text x="900" y="344" text-anchor="middle" font-size="12.5" fill="#1D2430">no valid citation → no answer</text>
+    <text x="900" y="363" text-anchor="middle" font-size="12.5" fill="#1D2430">citation not in context → flag</text>
+    <text x="900" y="382" text-anchor="middle" font-size="12.5" fill="#1D2430">fixed "no answer" sentence</text>
+    <text x="900" y="401" text-anchor="middle" font-size="12.5" fill="#1D2430">"not legal advice" note</text>
+
+    <rect x="1040" y="292" width="130" height="130" rx="10" fill="none" stroke="#7D8EA3" stroke-width="1.5"/>
+    <text x="1105" y="322" text-anchor="middle" font-size="15" font-weight="700" fill="#1D2430">Answer</text>
+    <text x="1105" y="344" text-anchor="middle" font-size="12.5" fill="#5B6574">+ sources</text>
+    <text x="1105" y="363" text-anchor="middle" font-size="12.5" fill="#5B6574">+ EUR-Lex links</text>
+    <text x="1105" y="382" text-anchor="middle" font-size="12.5" fill="#5B6574">+ latency</text>
+    <text x="1105" y="401" text-anchor="middle" font-size="12.5" fill="#5B6574">+ cost</text>
+
+    <path d="M200 357H236" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M490 357H526" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M760 357H796" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M1000 357H1036" stroke="#7D8EA3" stroke-width="1.6" marker-end="url(#a)"/>
+    <path d="M1100 226V250H365V288" stroke="#7D8EA3" stroke-width="1.6" fill="none" stroke-dasharray="5 4" marker-end="url(#a)"/>
+  </g>
+
+  <!-- bottom row -->
+  <g>
+    <rect x="30" y="462" width="560" height="128" rx="10" fill="#F4F6F9" stroke="#7D8EA3" stroke-width="1.5"/>
+    <text x="50" y="490" font-size="15" font-weight="700" fill="#1D2430">Evaluation · 30 test questions (15 DE / 15 EN, 4 out of scope)</text>
+    <text x="50" y="514" font-size="12.5" fill="#1D2430">Retrieval: hit rate@5, recall@5, MRR – vector vs. keyword vs. hybrid (no LLM)</text>
+    <text x="50" y="535" font-size="12.5" fill="#1D2430">Answers: correctness, faithfulness, relevance (LLM-as-judge),</text>
+    <text x="50" y="556" font-size="12.5" fill="#1D2430">citation precision, abstention, false refusals, latency, cost per 100 questions</text>
+    <text x="50" y="577" font-size="12.5" fill="#5B6574">python -m src.evaluate retrieval | answers | report → docs/eval_results.md</text>
+
+    <rect x="630" y="462" width="540" height="128" rx="10" fill="#F4F6F9" stroke="#7D8EA3" stroke-width="1.5"/>
+    <text x="650" y="490" font-size="15" font-weight="700" fill="#1D2430">Delivery</text>
+    <text x="650" y="514" font-size="12.5" fill="#1D2430">FastAPI: POST /ask · POST /search (no LLM) · GET /health</text>
+    <text x="650" y="535" font-size="12.5" fill="#1D2430">Streamlit chat UI with sources and EUR-Lex links</text>
+    <text x="650" y="556" font-size="12.5" fill="#1D2430">Docker Compose (api + ui) · GitHub Actions: ruff + 36 pytest tests</text>
+    <text x="650" y="577" font-size="12.5" fill="#5B6574">The KPI agent of project 4 calls /search and /ask as a tool</text>
+  </g>
+</svg>

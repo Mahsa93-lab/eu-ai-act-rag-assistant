@@ -1,0 +1,24 @@
+# Secrets – never commit
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Downloaded / generated – rebuild with the commands in the README
+data/raw/*.html
+data/eval_runs/
+chroma_db/
+models/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
