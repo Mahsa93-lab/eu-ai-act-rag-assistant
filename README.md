@@ -73,7 +73,7 @@ docker compose up --build                 # API + UI in containers (index from t
 Expected output of every step: [docs/expected-results.md](docs/expected-results.md)
 
 ## Tests
-`pytest` – 39 tests without network or model: both EUR-Lex layouts (footnotes, nested lists, quoted articles, annexes after the signature), chunking, RRF and stemming, search in all three modes on a temporary ChromaDB, guardrails (citations, dates and amounts) and PII masking, LLM client (incl. reasoning models without `temperature`), metrics, API. CI runs `ruff` and `pytest` on every push.
+`pytest` – 39 tests without network or model: both EUR-Lex layouts (footnotes, nested lists, quoted articles, annexes after the signature), chunking, RRF and stemming, search in all three modes on a temporary ChromaDB, guardrails (citations, dates and amounts) and PII masking, LLM client (incl. reasoning models without `temperature`), metrics, API. CI runs `ruff` and `pytest` and builds the Docker image (with an import check inside the container) on every push.
 
 ## Limitations
 - Not legal advice. Recitals and later amendments/corrigenda are not indexed in version 1

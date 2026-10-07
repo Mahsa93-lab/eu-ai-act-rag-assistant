@@ -73,7 +73,7 @@ docker compose up --build                 # API + UI im Container (Index vom Hos
 Erwartete Ausgabe jedes Schritts: [docs/expected-results.md](docs/expected-results.md)
 
 ## Tests
-`pytest` – 39 Tests ohne Netzwerk und ohne Modell: beide EUR-Lex-Layouts (Fußnoten, verschachtelte Aufzählungen, zitierte Artikel, Anhänge nach der Unterschrift), Chunking, RRF und Stemming, Suche in allen drei Modi auf einer temporären ChromaDB, Guardrails (Quellen, Daten und Beträge) und PII-Maskierung, LLM-Client (auch Reasoning-Modelle ohne `temperature`), Kennzahlen, API. Die CI führt `ruff` und `pytest` bei jedem Push aus.
+`pytest` – 39 Tests ohne Netzwerk und ohne Modell: beide EUR-Lex-Layouts (Fußnoten, verschachtelte Aufzählungen, zitierte Artikel, Anhänge nach der Unterschrift), Chunking, RRF und Stemming, Suche in allen drei Modi auf einer temporären ChromaDB, Guardrails (Quellen, Daten und Beträge) und PII-Maskierung, LLM-Client (auch Reasoning-Modelle ohne `temperature`), Kennzahlen, API. Die CI führt bei jedem Push `ruff` und `pytest` aus und baut das Docker-Image (mit Importprüfung im Container).
 
 ## Bezug zu meiner Erfahrung
 In der Lieferantenauditierung bei BMW habe ich täglich mit Anforderungen gearbeitet, die in Normen und Regelwerken stehen – und gelernt, dass eine Aussage nur zählt, wenn man ihre Quelle nennen kann. Als Six Sigma Black Belt messe ich, bevor ich verbessere. Beides steckt in diesem Projekt: jede Antwort mit Artikelangabe, und die Qualität mit festen Testfragen und Kennzahlen statt nach Gefühl bewertet.
