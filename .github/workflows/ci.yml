@@ -14,3 +14,10 @@ jobs:
       - run: pip install -r requirements.txt
       - run: ruff check .
       - run: pytest -q
+  docker:
+    # builds the image on every push, so the Dockerfile cannot silently break
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t eu-ai-act-rag-assistant .
+      - run: docker run --rm eu-ai-act-rag-assistant python -c "import src.api, src.rag, src.retrieval; print('imports ok')"

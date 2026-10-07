@@ -1,0 +1,16 @@
+﻿# Keep the build context small: the image only needs src/, prompts/, app.py and requirements.txt.
+# Data, index and model are mounted as volumes (see docker-compose.yml) - and .env never goes into an image.
+.git
+.venv
+venv
+.env
+models
+chroma_db
+data
+docs
+images
+tests
+.github
+**/__pycache__
+.pytest_cache
+.ruff_cache
