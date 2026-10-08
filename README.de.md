@@ -82,13 +82,25 @@ In der Lieferantenauditierung bei BMW habe ich täglich mit Anforderungen gearbe
 - Keine Rechtsberatung. Erwägungsgründe und spätere Änderungen/Berichtigungen sind in Version 1 nicht indexiert
 - Der LLM-Bewerter stammt aus derselben Modellfamilie wie das antwortende Modell; 30 Fragen zeigen Tendenzen, keine statistische Sicherheit
 - Die Faktenprüfung deckt Daten und Beträge ab, keine anderen Aussagen; je Lauf bleibt eine unvollständige oder umgekehrte Bedingung (siehe q10, q13)
+- Die PII-Maskierung erkennt E-Mail, Telefonnummern und IBAN, keine Namen
+- Datenschutz: personenbezogene Daten werden vor jedem LLM-Aufruf maskiert; die OpenAI API nutzt API-Daten standardmäßig nicht zum Training (Speicherung bis zu 30 Tage zur Missbrauchserkennung). Im kostenlosen Gemini-Kontingent darf Google Eingaben zur Produktverbesserung nutzen – für öffentliches Recht vertretbar, nicht für Unternehmensdaten; vollständig lokal: Ollama
 
 ## Nächste Schritte
 - Vorschriften zum Geltungsbeginn stärker gewichten oder Fragen „Ab wann gilt …?“ gezielt dorthin leiten (behebt q01)
 - Zerlegung deutscher Komposita für BM25 und gewichtete RRF – getestet auf einem **separaten** Fragenset, nicht auf diese 30 abgestimmt
 - Größeres Testset gemeinsam mit Fachleuten aus dem Recht; ein zweites, anderes Bewertungsmodell
-- Die PII-Maskierung erkennt E-Mail, Telefonnummern und IBAN, keine Namen
-- Datenschutz: personenbezogene Daten werden vor jedem LLM-Aufruf maskiert; die OpenAI API nutzt API-Daten standardmäßig nicht zum Training (Speicherung bis zu 30 Tage zur Missbrauchserkennung). Im kostenlosen Gemini-Kontingent darf Google Eingaben zur Produktverbesserung nutzen – für öffentliches Recht vertretbar, nicht für Unternehmensdaten; vollständig lokal: Ollama
+
+## Portfolio
+Vier zusammenhängende Projekte zu vertrauenswürdigen Daten und KI in der Supply Chain – vom Dashboard über die Pipeline bis zum Agenten:
+
+| # | Projekt | Fragestellung | Stack |
+|---|---|---|---|
+| 1 | [Lieferanten- & Lieferperformance](https://github.com/Mahsa93-lab/supplier-delivery-performance-powerbi) | Welche Lieferanten verursachen Verspätungen – und was kosten sie an Reklamationen? | SQL Server · Power BI · DAX |
+| 2 | [Lakehouse-Pipeline Supply Chain](https://github.com/Mahsa93-lab/lakehouse-supply-chain-pipeline) | Lassen sich dieselben Kennzahlen täglich, automatisch und hinter einem Datenqualitäts-Gate erzeugen? | Databricks · PySpark · Delta Lake |
+| 3 | **Assistent EU AI Act & DSGVO** *(dieses Repository)* | Kann ein KI-Assistent Rechtsfragen mit überprüfbaren Quellen beantworten? | RAG · OpenAI · FastAPI · Docker |
+| 4 | [KI-Agent für KPI-Wochenberichte](https://github.com/Mahsa93-lab/ai-kpi-reporting-agent) | Kann ein KI-Agent die wöchentliche Management-Summary schreiben – ohne eine einzige ungeprüfte Zahl? | n8n · MCP · SPC · Docker |
+
+Die Projekte bauen aufeinander auf: Projekt 2 liefert dieselben Zahlen wie Projekt 1 auf den Cent genau (99.441 Bestellungen, 13.591.643,70 BRL Umsatz); der Agent in Projekt 4 liest die Gold-Tabellen aus Projekt 2 und nutzt die Such-API aus Projekt 3.
 
 ---
 *Autorin: Mahsa Ahmadi · Ausschließlich öffentliche Gesetzestexte. Keine Rechtsberatung.*
